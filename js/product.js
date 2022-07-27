@@ -30,7 +30,7 @@ class Product{
         col.className = "col-sm-6 col-md-3 text-center"; //Debo de agregarle el h6 a este
 
         let cardMain = document.createElement("div");
-        cardMain.className = "card border-0 bg-light mb-2";
+        cardMain.className = "card border-0 bg-light mb-2 mt-1";
 
         let cardBody = document.createElement("div");
         cardBody.className = "card-body"
@@ -58,6 +58,7 @@ class Product{
         productLink.appendChild(image);
         col.appendChild(productTitle);
         col.appendChild(productPrice);
+        
         
         
     }

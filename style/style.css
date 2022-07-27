@@ -43,6 +43,19 @@
     background: rgba(217, 217, 217, 0.2);
 }
 
+.nav-background{
+    background: -webkit-linear-gradient(45deg,#F27EDF,#F2C2E1);
+    background: -moz-linear-gradient(45deg,#F27EDF,#F2C2E1);
+    background: -o-linear-gradient(45deg,#F27EDF,#F2C2E1);
+    background: -ms-linear-gradient(45deg,#F27EDF,#F2C2E1);
+    background: linear-gradient(45deg,#F27EDF,#F2C2E1);
+}
+
+.nav-secondary:hover, .nav-secondary:focus{
+    background: none;
+    text-decoration: underline;
+}
+
 .footer-link:hover,.footer-link:focus{
     text-decoration: underline;
 }
@@ -95,11 +108,16 @@
     border-radius: 60px;
     color: white;
     font-weight: 700;
+    padding: 2.3% 4% 2.3% 4%;
+    text-decoration: none;
+    position: relative;
+    bottom: -12px;
 }
 
 .btn1:hover, .btn1:focus{
     background-color: red;
     transition: 0.5s;
+    color: white;
 }
 
 .img-features{

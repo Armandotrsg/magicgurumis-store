@@ -1,10 +1,10 @@
 class Product{
-    constructor(name,price,img,link,alt){
+    constructor(name,price,img,link,alt){ 
         this.name = name;
         this.price = price;
         this.img = img;
         this.link = link;
-        this.alt = alt;
+        this.alt = alt; 
     }
 
     getName(){
@@ -58,9 +58,6 @@ class Product{
         productLink.appendChild(image);
         col.appendChild(productTitle);
         col.appendChild(productPrice);
-        
-        
-        
     }
 
 }

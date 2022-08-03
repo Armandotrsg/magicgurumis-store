@@ -72,29 +72,62 @@
             </div>
         </div>
       </header>
-      <!-- Vista de productos -->
-      <section>
-        <div class="container">
-          <div class="row" id="row1">
-            <h2>Categoría 1</h2>
-            <hr>
-            <!-- Build the cards in the website -->
-            <script type="text/javascript">
-              csvParse("products/productList.csv","1");//Parse the csv
-            </script>
-          </div>
-          <div class="row" id="row2">
-            <h2>Categoría 2</h2>
-            <hr>
-            <!-- Build the cards in the website -->
-            <script type="text/javascript">
-              csvParse("products/productList.csv","2");//Parse the csv
-            </script>
+      
+      <main>
+        <!-- Vista de productos -->
+        <section id="productView">
+          <div class="container">
+            <div class="row" id="row1">
+              <h2>Categoría 1</h2>
+              <hr>
+              <!-- Build the cards in the website -->
+              <script type="text/javascript">
+                var allCards1 = csvParse("products/productList.csv","1");//Parse the csv
+              </script>
+            </div>
+            <div class="row" id="row2">
+              <h2>Categoría 2</h2>
+              <hr>
+              <!-- Build the cards in the website -->
+              <script type="text/javascript">
+                var allCards2 = csvParse("products/productList.csv","2");//Parse the csv
+              </script>
 
+            </div>
           </div>
-        </div>
-      </section>
-      <footer class="mt-3">
+        </section>
+        <!-- Vista detallada -->
+        <section class ="p-3 d-none" id="moreInfo">
+          <div class="container">
+            <div class="row">
+              <div class="col-2">
+                <button type="button" class="btn btn-outline-secondary material-symbols-outlined mb-3" onclick="goBackToProducts()">arrow_back_ios_new</button>               
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="d-md-none ps-3" id="productTitle1">Tulipanes</h1>
+                <fig>
+                  <div class="card border-0 bg-light mb-2 about-me">
+                    <div class="card-body">
+                        <img src="img/tulipanes.jpeg" class="img-fluid" alt="Tulipanes tejidos" id="image-product">
+                    </div>
+                  </div>
+                </fig>
+              </div>
+              <div class="col-md-6">
+                <h1 class="d-none d-md-block ps-1" id="productTitle2">Tulipanes</h1>
+                <span class="mt-2 d-block mb-2" id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                <span class="mb-3 d-block img-caption" id="price">$200.00</span>
+                <a href="#" class="btn1">Hacer pedido</a>
+                <a href="#" class="btn1 ms-3" id="facebook">Ver en Facebook</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="mt-5">
         <div class="container">
             <nav class="row justify-content-center">
                 <div class="col-3 footer-link" style="text-transform: none;">

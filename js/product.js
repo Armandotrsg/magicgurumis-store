@@ -39,7 +39,6 @@ class Product{
 
         let cardMain = document.createElement("div");
         cardMain.className = "card border-0 bg-light mb-2 mt-1";
-        //cardMain.setAttribute("id",id_);
 
         let cardBody = document.createElement("div");
         cardBody.className = "card-body"
@@ -79,6 +78,9 @@ function changeView(product){
 
     let section = document.getElementById("moreInfo");
     section.classList.remove("d-none");
+
+    let header = document.getElementById("header");
+    header.classList.add("d-none");
   
     let title1 = document.getElementById("productTitle1");
     title1.innerHTML = product.getName();
@@ -99,11 +101,20 @@ function changeView(product){
     let facebook = document.getElementById("facebook");
     facebook.href = product.getLink();
     
-    return false;
+    return true;
 }
 
 function buildMoreInfo(element){
-    var file = "products/productList.csv";
+    let cardBody = element.parentElement;
+    let cardMain = cardBody.parentElement;
+    let col = cardMain.parentElement;
+    let row = col.parentElement;
+    let csvSource = row.id[3];
+    if (csvSource == "I"){
+        csvSource = "Index"
+    }
+
+    var file = "products/productList-" + csvSource + ".csv";
     var obj;
     $(document).ready(()=>{
         $.ajax({
@@ -112,7 +123,6 @@ function buildMoreInfo(element){
           success:function(data){
             var productData = data.split(/\r?\n|\r/);
             var allCards = [];
-            
             for (var i = 0; i < productData.length; i++){
               var cellData = productData[i].split(',');
               if(element.id == cellData[5]){

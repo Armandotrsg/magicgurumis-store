@@ -11,6 +11,11 @@ function goBackToProducts(){
 
   let productView = document.getElementById("productView");
   productView.className = "";
+
+  let header = document.getElementById("header");
+  header.classList.remove("d-none");
+
+  return true;
 }
 
 function csvParse(file,rowN){

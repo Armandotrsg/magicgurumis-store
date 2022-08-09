@@ -114,8 +114,13 @@
     bottom: -12px;
 }
 
-.btn1:hover, .btn1:focus{
-    background-color: red;
+.submit-button{
+    background-color: rgb(248,26,92) !important;
+    border: 0px;
+}
+
+.btn1:hover, .btn1:focus, .submit-button:hover, .submit-button:focus{
+    background-color: red !important;
     transition: 0.5s;
     color: white;
 }
@@ -164,6 +169,25 @@ footer{
 .img-caption{
     color: rgb(58, 58, 58);
 }
+
+.form-fieldset{
+    border: #817f7f solid 2px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+@media screen and (max-width:768px){
+    #order-product{
+        background-color: white !important;
+    }
+    .form-fieldset{
+        border: none;
+    }
+}
+
+/* #order-product{
+    height: 100vh;
+} */
 
 /* Back icon */
 .material-symbols-outlined {

@@ -18,6 +18,21 @@ function goBackToProducts(){
   return true;
 }
 
+function displayOrderSection(){
+  document.getElementById("order-product").classList.remove("d-none");
+  document.getElementsByTagName("footer")[0].classList.remove("mt-5");
+  return true;
+}
+
+function hideOrderSection(){
+  document.getElementById("order-product").classList.add("d-none");
+  document.getElementsByTagName("footer")[0].classList.add("mt-5");
+  
+  $("html, body").animate({ scrollTop: 0 }, "smooth");
+  
+  return true;
+}
+
 function csvParse(file,rowN){
     $(document).ready(()=>{
         $.ajax({
@@ -38,4 +53,64 @@ function csvParse(file,rowN){
         })
 
       })
+}
+
+function sendOrder(){
+
+  let send = true;
+
+  let inputElements = [
+    (document.getElementById("quantityInput").value == ""),
+    (document.getElementById("colorInput").value == ""),
+    (document.getElementById("nameInput").value == ""),
+    (document.getElementById("lastNameInput").value == ""),
+    (document.getElementById("streetInput").value == ""),
+    (document.getElementById("colonyInput").value == ""),
+    (document.getElementById("cityInput").value == ""),
+    (document.getElementById("stateInput").value == ""),
+    (document.getElementById("cpInput").value == ""),
+    (document.getElementById("countryInput").value == ""), 
+    (document.getElementById("invalidCheck").checked == false)
+  ];
+
+  for (let i = 0; i < inputElements.length; i++) {
+    if(inputElements[i]){
+      send = false;
+      break;
+    }
+    if(i == 0){
+      if(document.getElementById("quantityInput").value <= 0 || document.getElementById("quantityInput").value > 20){
+        send = false;
+        break;
+      }
+    }
+  }
+
+  if (send){
+    var mail = "example@gmail.com";
+    var enter = "%0D%0A";
+    var msg = "mailto:"+mail+"?subject=Pedido%20#"+idGenerator()+"&body=Detalles%20del%20pedido:"+enter+enter;
+    
+    let cantidad = document.getElementById("quantityInput").value.replace(/\s/g,"%20");
+    let color = document.getElementById("colorInput").value.replace(/\s/g,"%20");
+    let nombre = document.getElementById("nameInput").value.replace(/\s/g,"%20");
+    let apellido = document.getElementById("lastNameInput").value.replace(/\s/g,"%20");
+    let calle = document.getElementById("streetInput").value.replace(/\s/g,"%20");
+    let colonia = document.getElementById("colonyInput").value.replace(/\s/g,"%20");
+    let ciudad = document.getElementById("cityInput").value.replace(/\s/g,"%20");
+    let estado = document.getElementById("stateInput").value.replace(/\s/g,"%20");
+    let cp = document.getElementById("cpInput").value.replace(/\s/g,"%20");
+    let pais = document.getElementById("countryInput").value.replace(/\s/g,"%20");
+
+    msg += "Cantidad:%20" + cantidad + enter;
+    msg += "Color:%20" + color + enter;
+    msg += "Nombre:%20" + nombre + "%20" + apellido + enter;
+    msg += "Dirección:" + enter;
+    msg += "Calle:%20" + calle + ".%20Colonia%20" + colonia + "%20C.P:%20"+ cp+ enter;
+    msg += ciudad +",%20"+estado+enter;
+    msg += pais + enter;
+    window.open(msg);
+  }
+  
+
 }

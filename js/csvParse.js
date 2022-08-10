@@ -90,8 +90,8 @@ function sendOrder(){
     var mail = "example@gmail.com";
     var enter = "%0D%0A";
     let product = document.getElementById("productTitle2").innerHTML;
-    let price = document.getElementById("price").innerHTML * document.getElementById("quantityInput").value;
-    var msg = "mailto:"+mail+"?subject=Pedido%20#"+idGenerator()+"&body=Detalles%20del%20pedido:"+enter+enter+"Muñeco:%20"+product+enter+"Total:%20"+price+enter+enter;
+    let price = parseInt(document.getElementById("price").innerHTML.replace("$","")) * parseInt(document.getElementById("quantityInput").value); 
+    var msg = "mailto:"+mail+"?subject=Pedido%20#"+idGenerator()+"&body=Detalles%20del%20pedido:"+enter+enter+"Muñeco:%20"+product+enter+"Total:%20$"+price+enter+enter;
     
     let cantidad = document.getElementById("quantityInput").value.replace(/\s/g,"%20");
     let color = document.getElementById("colorInput").value.replace(/\s/g,"%20");
@@ -112,6 +112,7 @@ function sendOrder(){
     msg += ciudad +",%20"+estado+enter;
     msg += pais + enter;
     window.open(msg);
+    hideOrderSection();
   }
   
 

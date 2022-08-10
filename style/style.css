@@ -44,6 +44,7 @@
 }
 
 .nav-background{
+    background: #F27EDF;
     background: -webkit-linear-gradient(45deg,#F27EDF,#F2C2E1);
     background: -moz-linear-gradient(45deg,#F27EDF,#F2C2E1);
     background: -o-linear-gradient(45deg,#F27EDF,#F2C2E1);
@@ -83,6 +84,7 @@
 }
 
 .main-header{
+    background: #F27EDF;
     background: -webkit-linear-gradient(45deg,#F27EDF,#F2C2E1);
     background: -moz-linear-gradient(45deg,#F27EDF,#F2C2E1);
     background: -o-linear-gradient(45deg,#F27EDF,#F2C2E1);
@@ -159,6 +161,11 @@ h1+h6 {
 }
 
 footer{
+    background: #DD7BFF;
+    background: -webkit-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+    background: -moz-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+    background: -ms-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+    background: -o-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
     background: linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
 }
 
@@ -176,12 +183,39 @@ footer{
     background-color: white;
 }
 
+#productTitle1{
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
 @media screen and (max-width:768px){
+    .main-header{
+        background: #DD7BFF;
+        background: -webkit-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+        background: -moz-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+        background: -ms-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+        background: -o-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+        background: linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+    }
+
+    .nav-background{
+        background: #DD7BFF;
+        background: -webkit-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+        background: -moz-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+        background: -ms-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+        background: -o-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+        background: linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+    }
+
     #order-product{
         background-color: white !important;
     }
     .form-fieldset{
         border: none;
+    }
+    footer{
+        margin-top: 2rem;
     }
 }
 

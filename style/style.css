@@ -190,6 +190,9 @@ footer{
 }
 
 @media screen and (max-width:768px){
+    #imageBelowHeader2{
+        margin-top: 2rem !important;
+    }
     .main-header{
         background: #DD7BFF;
         background: -webkit-linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);

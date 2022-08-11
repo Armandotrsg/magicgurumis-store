@@ -138,9 +138,10 @@
                     <div class="row">
                       <div class="col-md-6 mb-3">
                         <label for="quantityInput">Cantidad</label>
-                        <input type="number" class="form-control" id="quantityInput" placeholder="Cantidad" min="1" max="20" value="1" required>
+                        <input type="number" class="form-control" id="quantityInput" placeholder="Cantidad" min="1" max="20" value="1" onchange="showPrice()" required>
+                        <div id="priceText" class="form-text"></div> <!-- Aquí se escribe el precio dada la cantidad de muñecos -->
                         <div class="valid-feedback">
-                          Ingresa un número válido
+                          Ingresa un número positivo menor o igual a 20
                         </div>
                       </div>
                       <!-- Color -->

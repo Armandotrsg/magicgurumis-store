@@ -18,9 +18,21 @@ function goBackToProducts(){
   return true;
 }
 
+function showPrice(){
+  let cantidad = document.getElementById("quantityInput").value;
+  var priceText = document.getElementById("priceText");
+  let price = parseInt(document.getElementById("price").innerHTML.replace("$","")) * parseInt(cantidad); 
+  if (cantidad > 0 && cantidad <= 20){
+    priceText.innerHTML = "Precio: $"+price.toString();
+  } else{
+    priceText.innerHTML = "";
+  }
+}
+
 function displayOrderSection(){
   document.getElementById("order-product").classList.remove("d-none");
   document.getElementsByTagName("footer")[0].classList.remove("mt-5");
+  showPrice();
   return true;
 }
 

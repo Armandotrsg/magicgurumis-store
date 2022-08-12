@@ -29,6 +29,10 @@ function showPrice(){
   }
 }
 
+function scrollTop(){
+  $("html, body").animate({ scrollTop: 0 }, "smooth");
+}
+
 function displayOrderSection(){
   document.getElementById("order-product").classList.remove("d-none");
   document.getElementsByTagName("footer")[0].classList.remove("mt-5");
@@ -40,7 +44,7 @@ function hideOrderSection(){
   document.getElementById("order-product").classList.add("d-none");
   document.getElementsByTagName("footer")[0].classList.add("mt-5");
   
-  $("html, body").animate({ scrollTop: 0 }, "smooth");
+  scrollTop();
   
   return true;
 }

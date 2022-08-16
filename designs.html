@@ -56,7 +56,7 @@
                 <a class="nav-link nav-secondary" href="contact.html">Contacto</a>
               </li>
             </ul>
-            <form class="d-flex" onsubmit="searchProduct()">
+            <form class="d-flex" onsubmit="searchProduct(); return false;">
               <input class="px-2 search" type="text" placeholder="Buscar" list="allProducts" id="searchInput" aria-label="Buscar">
               <datalist id="allProducts">
                 <script>

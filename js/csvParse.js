@@ -71,6 +71,33 @@ function csvParse(file,rowN){
       })
 }
 
+
+function setDataList(dataList){
+  let csvFiles = "products/productList-";
+  for (let i = 1; i < 3; i++) { //Number of CSV files is currently 2
+    let file = csvFiles + i + ".csv";
+    $(document).ready(()=>{
+      $.ajax({
+        url: file,
+        dataType:"text",
+        success:function(data){
+          var productData = data.split(/\r?\n|\r/);
+          for (var j = 0; j < productData.length; j++){
+            var cellData = productData[j].split(',');
+            let opt = document.createElement("option");
+            opt.value = cellData[0];
+            dataList.appendChild(opt);
+          }
+        }
+      })
+  
+    })
+    
+  }
+}
+
+
+
 function sendOrder(){
 
   let send = true;

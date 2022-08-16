@@ -128,6 +128,7 @@ function buildMoreInfo(element){
               if(element.id == cellData[5]){
                 obj = new Product(cellData[0],cellData[1],cellData[2],cellData[3],cellData[4],cellData[5],cellData[6]);
                 changeView(obj);
+                break;
               }
               
             }
@@ -139,5 +140,34 @@ function buildMoreInfo(element){
       });
       return false;
       
+}
+
+function searchProduct(){
+    let csvFiles = "products/productList-";
+    let searchValue = document.getElementById("searchInput").value.trim();
+    for (let i = 1; i < 3; i++) { //Number of CSV files is currently 2
+        let file = csvFiles + i + ".csv";
+        $(document).ready(()=>{
+        $.ajax({
+            url: file,
+            dataType:"text",
+            success:function(data){
+            var productData = data.split(/\r?\n|\r/);
+            for (var j = 0; j < productData.length; j++){
+                
+                var cellData = productData[j].split(',');
+                if (cellData[0] == searchValue){
+                    obj = new Product(cellData[0],cellData[1],cellData[2],cellData[3],cellData[4],cellData[5],cellData[6]);
+                    changeView(obj);
+                    document.getElementById("searchInput").value = "";
+                    break;
+                }
+            }
+            }
+        })
+    
+        })
+        
+    }
 }
 

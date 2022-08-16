@@ -56,8 +56,13 @@
                 <a class="nav-link nav-secondary" href="contact.html">Contacto</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="px-2 search" type="search" placeholder="Buscar" aria-label="Buscar">
+            <form class="d-flex" onsubmit="searchProduct()">
+              <input class="px-2 search" type="text" placeholder="Buscar" list="allProducts" id="searchInput" aria-label="Buscar">
+              <datalist id="allProducts">
+                <script>
+                    setDataList(document.getElementById("allProducts"));
+                </script>
+              </datalist>
               <button class="btn0" type="submit">Buscar</button>
             </form>
           </div>
